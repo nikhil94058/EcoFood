@@ -1,0 +1,112 @@
+/* ===== ROOT VARIABLES ===== */
+:root {
+  --primary: #2ecc71;
+  --primary-dark: #27ae60;
+  --text-light: #ffffff;
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== NAVBAR ===== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 56px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+  color: var(--text-light);
+
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(10px);
+}
+
+/* ===== LOGO ===== */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+}
+
+.logo .emoji {
+  font-size: 28px;
+}
+
+.logo .brand {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+}
+
+/* ===== LINKS ===== */
+.links {
+  display: flex;
+  gap: 32px;
+}
+
+.links a {
+  position: relative;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-light);
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.links a:hover {
+  opacity: 1;
+}
+
+/* underline animation */
+.links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 0%;
+  background: var(--text-light);
+  transition: width 0.3s ease;
+}
+
+.links a:hover::after,
+.links a.active::after {
+  width: 100%;
+}
+
+/* ===== CTA BUTTON ===== */
+.cta {
+  background: var(--text-light);
+  color: var(--primary-dark);
+
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+
+  transition: all 0.3s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .nav {
+    padding: 14px 24px;
+  }
+
+  .links {
+    gap: 20px;
+  }
+
+  .cta {
+    padding: 8px 16px;
+  }
+}

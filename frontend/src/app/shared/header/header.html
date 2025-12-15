@@ -1,0 +1,40 @@
+<nav class="nav">
+  <!-- Logo -->
+  <div class="logo">
+    <span class="emoji">🌱</span>
+    <span class="brand">EcoFood</span>
+  </div>
+
+  <!-- Hamburger (mobile) -->
+  <button class="hamburger" (click)="toggleMenu()">
+    ☰
+  </button>
+
+  <!-- Nav Links -->
+  <div class="links" [class.open]="menuOpen">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a routerLink="/donate" routerLinkActive="active">Donate</a>
+    <a routerLink="/ngo" routerLinkActive="active">NGO</a>
+    <a routerLink="/about" routerLinkActive="active">About</a>
+  </div>
+
+  <!-- Right Actions -->
+  <div class="actions">
+    <!-- Notification -->
+    <button class="icon-btn">
+      🔔
+      <span class="badge">3</span>
+    </button>
+
+    <!-- Profile -->
+    <div class="profile" (click)="toggleProfile()">
+      <img src="https://i.pravatar.cc/40" alt="Profile" class="avatar" />
+
+      <div class="menu" [class.show]="profileOpen">
+        <a routerLink="/profile">Profile</a>
+        <a routerLink="/settings">Settings</a>
+        <a class="danger">Logout</a>
+      </div>
+    </div>
+  </div>
+</nav>

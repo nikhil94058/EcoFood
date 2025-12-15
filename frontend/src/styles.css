@@ -1,3 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+/* ===== HAMBURGER ===== */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: transparent;
+  color: white;
+}
 
-@import "tailwindcss";
+/* ===== MOBILE STYLES ===== */
+@media (max-width: 900px) {
+  .hamburger {
+    display: block;
+  }
+
+  .links {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(180deg, #2ecc71, #27ae60);
+
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    padding: 20px 0;
+
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  .links.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .actions {
+    gap: 12px;
+  }
+
+  .menu {
+    top: 44px;
+  }
+}

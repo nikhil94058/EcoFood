@@ -1,0 +1,68 @@
+<div class="auth-container">
+  <div class="auth-card">
+    <h2>Sign Up 🌱</h2>
+    <p>Create your EcoFood account</p>
+
+    <form (ngSubmit)="onSignup()" enctype="multipart/form-data">
+      <input
+        type="text"
+        placeholder="Full Name"
+        [(ngModel)]="name"
+        name="name"
+        required
+      />
+
+      <input
+        type="email"
+        placeholder="Email"
+        [(ngModel)]="email"
+        name="email"
+        required
+      />
+
+      <input
+        type="password"
+        placeholder="Password"
+        [(ngModel)]="password"
+        name="password"
+        required
+      />
+
+      <input
+        type="text"
+        placeholder="Address"
+        [(ngModel)]="address"
+        name="address"
+        required
+      />
+
+      <input
+        type="text"
+        placeholder="Phone Number"
+        [(ngModel)]="phoneNumber"
+        name="phoneNumber"
+        required
+      />
+
+      <!-- Profile Image -->
+      <input
+        type="file"
+        (change)="onFileSelected($event)"
+        accept="image/*"
+      />
+
+      <!-- Image Preview -->
+      <img *ngIf="imagePreview" [src]="imagePreview" alt="Profile Preview" class="preview">
+
+      <button type="submit" class="bg-green-400 text-white px-4 py-2 rounded">
+  Sign Up
+</button>
+
+    </form>
+
+    <p class="switch">
+      Already have an account?
+      <a routerLink="/login">Login</a>
+    </p>
+  </div>
+</div>

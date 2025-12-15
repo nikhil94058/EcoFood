@@ -1,0 +1,90 @@
+/* ===== ROOT VARIABLES ===== */
+:root {
+  --primary: #2ecc71;
+  --primary-dark: #27ae60;
+  --text-light: #ffffff;
+  --text-dark: #333333;
+  --radius: 12px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* ===== RESET / BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+/* ===== LAYOUT WRAPPER ===== */
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+.layout header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* ===== MAIN CONTENT CENTERED ===== */
+.layout main {
+  flex: 1; /* take remaining space */
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;     /* center vertically */
+  padding: 20px;
+  background: #f5f5f5;
+}
+
+/* ===== CARD / CONTENT ===== */
+.layout main .card,
+.layout main .auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.layout main .card:hover,
+.layout main .auth-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* ===== FOOTER ===== */
+.layout footer {
+  background: var(--primary-dark);
+  color: var(--text-light);
+  text-align: center;
+  padding: 12px 20px;
+  font-size: 14px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 500px) {
+  .layout main {
+    padding: 16px;
+  }
+
+  .layout main .card,
+  .layout main .auth-card {
+    padding: 32px 20px;
+  }
+}

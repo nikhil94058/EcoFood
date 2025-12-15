@@ -1,0 +1,119 @@
+/* ===== ROOT VARIABLES ===== */
+:root {
+  --primary: #2ecc71;
+  --primary-dark: #27ae60;
+  --text-light: #ffffff;
+  --text-dark: #333333;
+  --shadow-soft: 0 20px 50px rgba(0, 0, 0, 0.15);
+  --radius: 18px;
+}
+
+/* ===== FULL SCREEN BACKGROUND ===== */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  padding: 16px;
+}
+
+/* ===== CARD ===== */
+.auth-card {
+  background: white;
+  padding: 40px 32px;
+  width: 100%;
+  max-width: 420px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== HEADINGS ===== */
+.auth-card h2 {
+  margin-bottom: 8px;
+  color: var(--primary-dark);
+  font-size: 28px;
+}
+
+.auth-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+/* ===== INPUT FIELDS ===== */
+.auth-card input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.auth-card input:focus {
+  border-color: var(--primary);
+}
+
+/* ===== BUTTON ===== */
+.auth-card button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 999px;
+  border: none;
+  background: var(--primary);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.auth-card button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* ===== SWITCH TO SIGNUP ===== */
+.switch {
+  font-size: 14px;
+  color: #555;
+}
+
+.switch a {
+  color: var(--primary-dark);
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 4px;
+  transition: color 0.2s;
+}
+
+.switch a:hover {
+  color: var(--primary);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 500px) {
+  .auth-card {
+    padding: 32px 20px;
+  }
+
+  .auth-card h2 {
+    font-size: 24px;
+  }
+
+  .auth-card button {
+    font-size: 15px;
+  }
+}
